@@ -10,8 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@teishi/bulma_theme": "^0.0.2",
+    "bulma": "^1.0.2",
+    "node": "^22.6.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.0",
+    "react-ui": "^1.0.0-beta.32"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
