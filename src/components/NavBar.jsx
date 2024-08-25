@@ -26,7 +26,7 @@ function NavBar({ appName }) {
                                 className="image is-160x160"
                             />
                         </Link>
-                        <p className="column">La voz <b></b>de la Actualidad</p>
+                        <p className="column">{appName}</p>
                     </div>                    
                     
                 </div>

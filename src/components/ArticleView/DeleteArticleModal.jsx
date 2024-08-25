@@ -31,7 +31,7 @@ function DeletearticleModal({ isOpen, onClose, article_id, onDelete }) {
             <div className="modal-background" onClick={onClose}></div>
             <div className="modal-card">
                 <header className="modal-card-head">
-                    <p className="modal-card-title">Eliminar Canción</p>
+                    <p className="modal-card-title">Eliminar Articulo</p>
                     <button
                         className="delete"
                         aria-label="close"
@@ -42,8 +42,8 @@ function DeletearticleModal({ isOpen, onClose, article_id, onDelete }) {
                     <form onSubmit={handleDetelearticle}>
                         <div className="field">
                             <p className="subtitle">
-                                Estas seguro que deseas eliminar esta canción.
-                                No se podrá recuperar este recurso.
+                                Estas seguro que deseas eliminar este Articulo.
+                                No se podrá recuperar el mismo.
                             </p>
                         </div>
                         <button

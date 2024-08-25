@@ -1,5 +1,5 @@
 import useFetch from "../../hooks/useFetch";
-//import DeletearticleModal from "./DeleteSongModal";
+import DeletearticleModal from "./DeleteArticleModal";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ViewArticle from "./ViewArticle";

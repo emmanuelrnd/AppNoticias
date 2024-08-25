@@ -12,15 +12,11 @@ export default function Layout() {
                 className={`hero is-fullheight is-flex is-flex-direction-column`}
             >
                 <ThemeProvider>
-                    <NavBar appName={"Infoplc"} />
+                    <NavBar appName={"Diario Matutino"} />
                     <Outlet />
                     <FooterBar
-                        appName={"Infoplc"}
-                        socialNetworks={[
-                            { name: "facebook", url: "https://facebook.com" },
-                            { name: "twitter", url: "https://twitter.com" },
-                            { name: "instagram", url: "https://instagram.com" },
-                        ]}
+                        appName={"Diario Matutino"}
+                        
                     />
                 </ThemeProvider>
             </div>
