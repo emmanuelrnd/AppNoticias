@@ -11,6 +11,7 @@ export default function ArticleForm() {
 
     const state = useAuth("state");
     console.log("state", state);
+    const { token } = useAuth("state");
 
     useEffect(
         () => {
@@ -62,7 +63,7 @@ export default function ArticleForm() {
         setArticleImage(event.target.files[0]);
     }
 
-    function handleSubmit(event) {
+    function handleSubmit(event) {        
         event.preventDefault();
         if (!submitting && !loadingCategories) {
             setSubmitting(true);
@@ -86,7 +87,7 @@ export default function ArticleForm() {
                     return response.json();
                 })
                 .then((data) => {
-                    selectedCategories.forEach((category) => {
+                    selectedCategories.forEach((category) => {                        
                         fetch(
                             `${
                                 import.meta.env.VITE_API_BASE_URL
@@ -116,7 +117,7 @@ export default function ArticleForm() {
 
     return (
         <form
-            className={`box m-4 p-4 has-background-dark`}
+            className={`box m-4 p-4 has-background-grey-light`}
             onSubmit={handleSubmit}
         >
             <div className="field">
@@ -158,7 +159,7 @@ export default function ArticleForm() {
                 <div className="select is-fullwidth is-multiple">
                     <select
                         multiple
-                        size="5"
+                        size="7"
                         value={selectedCategories.map((cat) => cat.id)}
                         onChange={handleCategoryChange}
                     >
@@ -173,7 +174,7 @@ export default function ArticleForm() {
             <div className="field">
                 <div className="control">
                     <button
-                        className="button is-primary"
+                        className="button is-link"
                         type="submit"
                         disabled={submitting || loadingCategories}
                     >

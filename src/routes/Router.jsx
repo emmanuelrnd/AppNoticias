@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "./Layout";
 import ProtectedRoute from "./ProtectedRoute";
 import Home from "../components/Home";
-import ArticleForm from "../components/ArticleForm";
+import ArticleForm from "../components/ArticleForm"
 import Login from "../components/Auth/Login";
 import Profile from "../components/Profile";
 import ViewArticle from "../components/ArticleView/ViewArticle";
@@ -22,23 +22,21 @@ const Router = createBrowserRouter([
             },
 
             {
-                path: "articles",
-                element: <ArticleForm />,
-                     children: [
+                path: "infosphere",
+                children: [
                     {
                         index: true,
                         element: <h1>Articulos</h1>,
                     },
-                    
-                ], 
-            },
-            {
-                path: "add",
-                element: (
-                    <ProtectedRoute>
-                        <ArticleForm />
-                    </ProtectedRoute>
-                ),
+                    {
+                        path: "articles",
+                        element: (
+                            <ProtectedRoute>
+                                <ArticleForm />
+                            </ProtectedRoute>
+                        ),
+                    },
+                ],
             },
             {
                 path: "login",

@@ -69,39 +69,48 @@ function Home() {
         if (lastarticleElementRef.current) {
             observerRef.current.observe(lastarticleElementRef.current);
         }
+       
     }, [isLoading, nextUrl]);   
 
     if (isError) return <p>Error al cargar las noticias.</p>;
     if (!articles.length && !isLoading) return <p>No hay noticias disponibles</p>;
 
     return (
-        <div>
-            <div className="my-5">
+        <div className="has-auto-count"> 
+            <div className="fixed-grid">
                 
-                <ul>
-                    {articles.map((article, index) => {
+                <div className="grid">
+                    {articles.map((article, index,array) => {
                         if (articles.length === index + 1) {
                             return (
-                                <div
-                                    key={article.id}
-                                    ref={lastarticleElementRef}
-                                    className="column is-half"
-                                >
-                                    <ArticleCard article={article} user_ID={user__id} />
+                                <div className= "columns">
+                                    <div
+                                        key={article.id}
+                                        ref={lastarticleElementRef}
+                                        className="column"
+                                    >
+                                        <ArticleCard article={article} user_ID={user__id} />
+                                        <p>Hola</p>
+                                    </div>                                                                    
                                 </div>
                             );
                         } else {
-                            return (
-                                <div
-                                    key={article.id}
-                                    className="column is-two-thirds"
-                                >
-                                    <ArticleCard article={article} user_ID={user__id} />
-                                </div>
+                            return (        
+                                    <div
+                                        key={article.id}                                    
+                                        className="cell"
+                                    >
+                                        <ArticleCard article={article} user_ID={user__id} />                                        
+                                    </div>
+                                    
+                                
                             );
                         }
                     })}
-                </ul>
+
+                    
+                </div>                
+                
                 {isLoading && <p>Cargando más noticias...</p>}
             </div>
         </div>

@@ -35,7 +35,7 @@ function NavBar({ appName }) {
                         
                         items={[
                             { text: "Inicio", url: "/" },
-                            { text: "Agregar Noticia", url: "/article/add" },
+                            { text: "Agregar Noticia", url: "/infosphere/articles" },
                             { text: "Profile", url: "/profile" },
                         ]}
                     />

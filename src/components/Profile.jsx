@@ -16,6 +16,7 @@ function Profile() {
     const dobRef = useRef(null);
     const bioRef = useRef(null);
     const userStateRef = useRef(null);
+   
 
     // Fetch para cargar tarjeta de perfil
     const {
@@ -23,6 +24,7 @@ function Profile() {
         isLoading: isLoadingProfile,
         isError: isErrorProfile,
         doFetch: fetchProfile,
+        
     } = useFetch(
         `${import.meta.env.VITE_API_BASE_URL}users/profiles/profile_data/`,
         {
@@ -229,30 +231,9 @@ function Profile() {
                                             </div>
                                         </div>
                                     </div>
-                                ) : (
-                                    <div
-                                        className="subtitle is-6"
-                                        style={{
-                                            display: "flex",
-                                            alignItems: "center",
-                                        }}
-                                        onClick={() => setIsEditingState(true)}
-                                    >
-                                        <img
-                                            src={`${
-                                                import.meta.env
-                                                    .VITE_API_BASE_URL
-                                            }${userData.state.icon}`}
-                                            alt="State icon"
-                                            style={{
-                                                height: "20px",
-                                                marginRight: "5px",
-                                                borderRadius: "50%",
-                                            }}
-                                        />
-                                        {userData.state.name}
-                                    </div>
-                                )}
+                                ) : null
+                                    
+                                }
                             </div>
                             <button
                                 className="button is-primary"

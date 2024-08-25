@@ -12,9 +12,9 @@ function ArticleCard({ article, user_ID }) {
     return (
             <div class="card">
                 <div class="card-image">
-                    <figure class="image is-4by3">
+                    <figure class="image is-1by1">
                         <img
-                        src= {article.image}
+                        src= {article.image} 
                         alt="Placeholder image"
                         />
                     </figure>
@@ -34,7 +34,7 @@ function ArticleCard({ article, user_ID }) {
                         {article.abstract}
                     </p>
                     <br />
-                    <time datetime="2016-1-1">{article.created_at}</time>
+                    <time Datetime="2016-1-1">{article.created_at}</time>
                     </div>
                 </div>     
 
@@ -42,14 +42,7 @@ function ArticleCard({ article, user_ID }) {
                     <div className="column" onClick={() => setIsModalOpen(true)}>
                         <button className="button is-danger">Eliminar</button>
                     </div>
-                ) : (
-                    <div className="column" onClick={() => navigate("/vista")}>
-                        <p>{article.id}</p>
-                         <ViewArticle article_id={article.id}  />
-
-                        <button className="button is-danger">VER ARTICULO</button>
-                    </div>
-                )}
+                ) : null}
                 {isModalOpen ? (
                     <DeletearticleModal
                         isOpen={isModalOpen}
