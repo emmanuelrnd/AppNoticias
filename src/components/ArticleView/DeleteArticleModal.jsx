@@ -1,14 +1,14 @@
 import { useAuth } from "../../contexts/AuthContext";
 import { useEffect } from "react";
 
-function DeletearticleModal({ isOpen, onClose, article_id, onDelete }) {
+function DeleteArticleModal({ isOpen, onClose, article_id, onDelete }) {
     const { token } = useAuth("state");
 
     const handleDetelearticle = (event) => {
         event.preventDefault();
 
         onDelete.doFetch(
-            `${import.meta.env.VITE_API_BASE_URL}/harmonyhub/articles/${article_id}/`,
+            `${import.meta.env.VITE_API_BASE_URL}infosphere/articles/${article_id}/`,
             {
                 method: "DELETE",
                 headers: {
@@ -60,4 +60,4 @@ function DeletearticleModal({ isOpen, onClose, article_id, onDelete }) {
     );
 }
 
-export default DeletearticleModal;
+export default DeleteArticleModal;

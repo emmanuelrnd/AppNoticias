@@ -1,5 +1,5 @@
 import useFetch from "../../hooks/useFetch";
-import DeletearticleModal from "./DeleteArticleModal";
+import DeleteArticleModal from "./DeleteArticleModal";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ViewArticle from "./ViewArticle";
@@ -44,7 +44,7 @@ function ArticleCard({ article, user_ID }) {
                     </div>
                 ) : null}
                 {isModalOpen ? (
-                    <DeletearticleModal
+                    <DeleteArticleModal
                         isOpen={isModalOpen}
                         onClose={() => setIsModalOpen(false)}
                         article_id={article.id}

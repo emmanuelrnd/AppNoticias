@@ -89,8 +89,7 @@ function Home() {
                                         ref={lastarticleElementRef}
                                         className="column"
                                     >
-                                        <ArticleCard article={article} user_ID={user__id} />
-                                        <p>Hola</p>
+                                        <ArticleCard article={article} user_ID={user__id} />                                       
                                     </div>                                                                    
                                 </div>
                             );

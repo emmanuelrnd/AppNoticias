@@ -13,50 +13,56 @@ function NavBar({ appName }) {
     return (
         <header>
             <nav
-                className={"navbar has-background-white-ter"}
+                className="navbar is-link"
                 role="navigation"
                 aria-label="main navigation"
             >
                 <div className="navbar-brand">
-                    <div className="columns is-vcentered">
+                    <a className="navbar-item">
                         <Link className="navbar-item column" to="/">
                             <img
                                 src={appLogo}
                                 alt="App Logo"
-                                className="image is-160x160"
+                                className="image is-64x64"
                             />
-                        </Link>
+                        </Link>                    
+                    </a>
+
+                    <div className="columns is-vcentered">
                         <p className="column">{appName}</p>
-                    </div>                    
+                    </div>                       
                     
                 </div>
-                <div>
-                    <NavMenu
-                        
-                        items={[
-                            { text: "Inicio", url: "/" },
-                            { text: "Agregar Noticia", url: "/infosphere/articles" },
-                            { text: "Profile", url: "/profile" },
-                        ]}
-                    />
+
+                <div className="navbar-start is-expanded">
+                        <NavMenu
+                            
+                            items={[
+                                { text: "Inicio", url: "/" },
+                                { text: "Agregar Noticia", url: "/infosphere/articles" },
+                                { text: "Profile", url: "/profile" },
+                            ]}
+                        />
                 </div>
-                <div>
-                    <button
-                        className={`button is-small is-primary`}
-                        onClick={
-                            isAuthenticated
-                                ? () => {
-                                    logout();
-                                }
-                                : () => {
-                                    navigate("/login");
-                                }
-                        }
-                    >
-                        {isAuthenticated ? "Cerrar sesión" : "Iniciar Sesión"}
-                    </button>
-                </div>
+                <div className="navbar-end">
+                        <button
+                            className={`button is-small is-primary`}
+                            onClick={
+                                isAuthenticated
+                                    ? () => {
+                                        logout();
+                                    }
+                                    : () => {
+                                        navigate("/login");
+                                    }
+                            }
+                        >
+                            {isAuthenticated ? "Cerrar sesión" : "Iniciar Sesión"}
+                        </button>
+                </div>              
+               
             </nav>
+
         </header>
     );
 }
