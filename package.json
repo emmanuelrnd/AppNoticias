@@ -1,6 +1,5 @@
 {
   "name": "appnoticias",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -27,5 +26,14 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
     "vite": "^5.3.4"
+  },
+  "description": "Contexto react",
+  "main": "./dist/appnoticias.umd.js",
+  "module": "./dist/appnoticias.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/appnoticias.es.js",
+      "require": "./dist/appnoticias.umd.js"
+    }
   }
 }
