@@ -61,12 +61,11 @@ const Router = createBrowserRouter([
         element: <h1>Sección no encontrada</h1>,
     },
 
-    {
-        basename: "/appnoticias/",
-    }
+    
 ],
-
-
+{
+    basename: "/appnoticias/"
+},
 );
 
 export { Router };
